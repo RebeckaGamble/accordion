@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #f2f1f4;
+  color: #19171c;
+}
+
+.accordion {
+  min-width: 300px;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.accordion h1 {
+  padding-bottom: 18px;
+}
+
+.title {
+  width: 100%;
+  padding: 24px 4px;
+  padding-right: 20px;
+  text-align: left;
+  font-size: 22px;
+  border-bottom: 0.4px solid rgb(212, 210, 210);
+  cursor: pointer;
+}
+
+.title::first-letter {
+  text-transform: capitalize;
+}
+
+.title:hover {
+  background: #f6f6f6;
+}
+
+/*hide body when not active*/
+.description {
+  display: none;
+}
+
+/*show body/description when title active*/
+.title.active + .description {
+  display: block;
+  padding: 18px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-bottom: 0.4px solid rgb(212, 210, 210);
+}
+
+/*when closed, show + */
+.title::after {
+  content: "+";
+  float: inline-end;
+  padding: 5px;
+}
+
+/*when open/active change to -*/
+.title.active::after {
+  content: "-";
+}
